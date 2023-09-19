@@ -11,6 +11,6 @@ void swap_int(int *a, int *b)
 	int temp; /* Declare a temporary variable to hold the value */
 
 	temp = *a; /* Store the value pointed to by a in temp */
-	*a = *b;   /* Update the value pointed to by a with the value pointed to by b */
+	*a = *b;   /* Update the value pointed to by a to the value b */
 	*b = temp; /* Update the value pointed to by b with the value in temp */
 }
