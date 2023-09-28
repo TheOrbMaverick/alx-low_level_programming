@@ -1,6 +1,8 @@
 /**
  * is_palindrome - Checks if a string is a palindrome.
  * @s: The string to check.
+ * @start: The starting index.
+ * @end: The ending index.
  *
  * Return: 1 if the string is a palindrome, 0 otherwise.
  */
@@ -10,6 +12,7 @@ int _strlen_recursion(char *s);
 int is_palindrome(char *s)
 {
 	int len = _strlen_recursion(s);
+
 	return (check_palindrome(s, 0, len - 1));
 }
 
