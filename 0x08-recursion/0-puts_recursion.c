@@ -1,15 +1,9 @@
-#include <unistd.h>
+#include <stdio.h>
 
 /**
  * _puts recursion - Prints a string followed by a new line
  * @s the string to be printed
 */
-
-int _putchar(char c)
-{
-    return write(1, &c, 1);
-}
-
 
 void _puts_recursion(char *s)
 {
