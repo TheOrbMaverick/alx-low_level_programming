@@ -5,7 +5,7 @@
 * @s: The string to print.
 *
 * Description: This function prints the characters of a string one by one
-* 		using recursion until it reaches the null terminator.
+*		using recursion until it reaches the null terminator.
 *		It then prints a newline character.
 */
 
