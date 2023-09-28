@@ -5,7 +5,7 @@
  * _print_rev_recursion - Prints a string in reverse.
  * @s: The string to print in reverse.
  *
- * Description: This function uses recursion to print the characters of a string
+ * Description: Function uses recursion to print the characters of a string
  *              in reverse order until it reaches the null terminator '\0'.
  */
 void _print_rev_recursion(char *s)
