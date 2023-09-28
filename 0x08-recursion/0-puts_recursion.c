@@ -1,3 +1,5 @@
+#include <unistd.h>
+
 /**
  * _puts recursion - Prints a string followed by a new line
  * @s the string to be printed
