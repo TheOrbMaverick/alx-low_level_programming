@@ -20,22 +20,3 @@ char *create_array(unsigned int size, char c) {
 
     return (array);
 }
-
-int main() {
-    unsigned int size = 10;
-    char character = 'A';
-
-    char *result = create_array(size, character);
-
-    if (result != NULL) {
-        unsigned int i;
-        for (i = 0; i < size; i++) {
-            printf("%c ", result[i]);
-        }
-        free(result); /* Don't forget to free the memory when done */
-    } else {
-        printf("Memory allocation failed.\n");
-    }
-
-    return (0);
-}
