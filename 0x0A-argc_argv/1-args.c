@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(int argc, char *argv[])
+int main(int argc)
 {
 	/* Check if argc is greater than or equal to 1 */
 	if (argc >= 1)
