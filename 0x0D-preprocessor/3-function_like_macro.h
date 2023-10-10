@@ -1,4 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ABS(x) fabs(x)
+/* Macro definition for the absolute number */
+#define ABS(x) ((x) < 0 ? -(x) : (x))
