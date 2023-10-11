@@ -1,0 +1,14 @@
+#ifndef FUNCTION_POINTERS_H
+#define FUNCTION_POINTERS_H
+
+/**
+ * print_name - Prints a name using a function specified by a function pointer.
+ * @name: The name to be printed.
+ * @f: A function pointer that defines how to print the name.
+ */
+
+void print_name(char *name, void (*f)(char *));
+int int_index(int *array, int size, int (*cmp)(int));
+void array_iterator(int *array, size_t size, void (*action)(int));
+
+#endif
