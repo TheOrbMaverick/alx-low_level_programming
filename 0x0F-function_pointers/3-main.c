@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "3-calc.h"
+#include <string.h>
 
 int main(int argc, char *argv[])
 {
@@ -25,6 +26,12 @@ int main(int argc, char *argv[])
     {
         printf("Error\n");
         return (99);
+    }
+
+    if ((strcmp(operator, "/") == 0 || strcmp(operator, "%") == 0) && num2 == 0)
+    {
+    	printf("Error\n");
+    	return 100;
     }
 
     result = op_func(num1, num2);
