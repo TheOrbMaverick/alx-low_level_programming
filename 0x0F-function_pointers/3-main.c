@@ -3,6 +3,13 @@
 #include "3-calc.h"
 #include <string.h>
 
+/**
+* main function executes all functions from previous files.
+* num1 is the first number
+* operator is the operation being done
+* num2 is the second number
+*/
+
 int main(int argc, char *argv[])
 {
 	int num1, num2;
