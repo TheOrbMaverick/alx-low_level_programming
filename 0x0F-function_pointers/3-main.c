@@ -4,11 +4,12 @@
 #include <string.h>
 
 /**
-* main - Entry point
-* @argc: Number of arguments
-* @argv: Argument vector
-* Return: Result of the operation or exit status
-*/
+ * main - Entry point
+ * @argc: Number of command-line arguments
+ * @argv: Array of command-line arguments
+ *
+ * Return: 0 (Success)
+ */
 
 int main(int argc, char *argv[])
 {
