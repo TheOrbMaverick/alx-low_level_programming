@@ -2,10 +2,19 @@
 #define LISTS_H
 
 /* Struct definition for a singly-linked list */
+/**
+ * struct list_s - singly linked list
+ * @str: string - (malloc'ed string)
+ * @len: length of the string
+ * @next: points to the next node
+ *
+ * Description: singly linked list node structure
+ */
 typedef struct list_s
 {
-	char *str;          /* String data in the node */
-	struct list_s *next; /* Pointer to the next node in the list */
+    char *str;
+    unsigned int len;
+    struct list_s *next;
 } list_t;
 
 /* Function prototype for print_list */
