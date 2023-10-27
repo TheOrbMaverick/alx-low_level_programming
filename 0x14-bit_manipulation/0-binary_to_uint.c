@@ -9,14 +9,14 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
+	unsigned int result = 0;
+	int i = 0;
+	char c;
+
 	if (b == NULL)
 	{
 		return (0);
 	}
-
-	unsigned int result = 0;
-	int i = 0;
-	char c;
 
 	while (b[i] != '\0')
 	{
@@ -24,7 +24,7 @@ unsigned int binary_to_uint(const char *b)
 
 		if (c != '0' && c != '1')
 		{
-			return (0); /* Invalid character */
+			return (0); /** Invalid character */
 		}
 
 		result = (result << 1) | (c - '0');
