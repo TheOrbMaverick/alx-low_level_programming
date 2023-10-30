@@ -6,13 +6,16 @@
 #include <elf.h>
 
 void print_elf_header_info(const char *filename) {
-    int fd = open(filename, O_RDONLY);
+    int fd;
+    Elf64_Ehdr elf_header;
+    int i;
+    
+    fd = open(filename, O_RDONLY);
     if (fd == -1) {
         dprintf(STDERR_FILENO, "Error: Cannot open file %s\n", filename);
         exit(98);
     }
 
-    Elf64_Ehdr elf_header;
     if (read(fd, &elf_header, sizeof(Elf64_Ehdr)) != sizeof(Elf64_Ehdr)) {
         dprintf(STDERR_FILENO, "Error: Cannot read ELF header from file %s\n", filename);
         close(fd);
@@ -26,7 +29,7 @@ void print_elf_header_info(const char *filename) {
     }
 
     printf("Magic:\t");
-    for (int i = 0; i < EI_NIDENT; i++) {
+    for (i = 0; i < EI_NIDENT; i++) {
         printf("%02x ", elf_header.e_ident[i]);
     }
     printf("\n");
