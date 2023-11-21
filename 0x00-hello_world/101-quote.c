@@ -2,11 +2,12 @@
 #define PHRASE "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n"
 
 /*
-* main - prints the phrase
+* int main - prints the phrase.
+* return - it returns 1
 */
 
 int main(void)
 {
-	write(1, PHRASE, sizeof(PHRASE));
+	write(1, PHRASE, 59);
 	return (1);
 }
