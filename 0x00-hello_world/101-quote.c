@@ -7,6 +7,6 @@
 
 int main(void)
 {
-	write(1, PHRASE, sizeof(PHRASE))
+	write(1, PHRASE, sizeof(PHRASE));
 	return (1);
 }
