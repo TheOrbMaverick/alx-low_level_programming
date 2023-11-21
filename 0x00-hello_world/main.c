@@ -5,7 +5,9 @@
  *
  * Return: Always 0 (Success)
  */
-int main(void)
-{
+int main() {
+
+    printf("Hello, world!\n");
+
     return (0);
 }
