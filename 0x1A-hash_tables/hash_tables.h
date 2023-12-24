@@ -9,11 +9,11 @@
  * @value: Value string
  * @next: Pointer to the next node in case of collision
  */
-typedef struct Node {
+typedef struct hash_node_t {
     char *key;
     char *value;
-    struct Node *next;
-} Node;
+    struct hash_node_t *next;
+} hash_node_t;
 
 /**
  * struct hash_table - Hash table structure
@@ -22,7 +22,7 @@ typedef struct Node {
  */
 typedef struct hash_table {
     unsigned long int size;
-    Node **array;
+    hash_node_t **array;
 } hash_table_t;
 
 /**

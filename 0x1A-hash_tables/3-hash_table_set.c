@@ -10,10 +10,12 @@
  *
  * Return: 1 if it succeeded, 0 otherwise
  */
+
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
     unsigned long int index;
     hash_node_t *new_node = NULL;
+    hash_node_t *current = NULL;
 
     if (ht == NULL || key == NULL || *key == '\0')
         return 0;
@@ -21,7 +23,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
     index = key_index((const unsigned char *)key, ht->size);
 
     /* Check if the key already exists in the linked list at the index */
-    hash_node_t *current = ht->array[index];
+    current = ht->array[index];
     while (current)
     {
         if (strcmp(current->key, key) == 0)
