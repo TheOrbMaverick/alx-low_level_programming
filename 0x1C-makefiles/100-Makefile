@@ -2,26 +2,29 @@ CC = gcc
 SRC = $(wildcard *.c)
 OBJ = $(SRC:.c=.o)
 NAME = school
-RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic
+RM = /bin/rm -f
 
 .PHONY: all clean oclean fclean re
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) -o $@ $(OBJ)
+	@echo "Linking objects into executable..."
+	@$(CC) $(OBJ) -o $(NAME)
 
-$(OBJ): $(SRC)
-	$(CC) -c $(CFLAGS) $(SRC)
+%.o: %.c
+	@echo "Compiling $<..."
+	@$(CC) -c $(CFLAGS) $< -o $@
 
 clean:
-	$(RM) *~ $(NAME)
+	@echo "Cleaning temporary files and executables..."
+	@$(RM) *~ $(NAME)
 
 oclean:
-	$(RM) $(OBJ)
+	@echo "Cleaning object files..."
+	@$(RM) $(OBJ)
 
-fclean:
-	$(RM) $(OBJ) $(NAME) *~
+fclean: clean oclean
 
 re: fclean all
