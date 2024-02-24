@@ -1,21 +1,18 @@
 CC = gcc
 SRC = $(wildcard *.c)
-OBJ = $(SRC:.c=.o)
 NAME = school
-CFLAGS = -Wall -Werror -Wextra -pedantic
-RM = /bin/rm -f
 
 .PHONY: all clean oclean fclean re
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(SRC:%.c=%.o)
 	@echo "Linking objects into executable..."
-	@$(CC) $(OBJ) -o $(NAME)
+	@$(CC) $(SRC:%.c=%.o) -o $(NAME)
 
 %.o: %.c
 	@echo "Compiling $<..."
-	@$(CC) -c $(CFLAGS) $< -o $@
+	@$(CC) -c -o $@ $< -I.
 
 clean:
 	@echo "Cleaning temporary files and executables..."
@@ -23,8 +20,25 @@ clean:
 
 oclean:
 	@echo "Cleaning object files..."
-	@$(RM) $(OBJ)
+	@$(RM) $(SRC:%.c=%.o)
 
 fclean: clean oclean
 
 re: fclean all
+
+%.o:
+	@:
+
+missing_h = $(wildcard m.h)
+
+ifeq (,$(missing_h))
+$(error Missing header file: m.h)
+endif
+
+define RM_ONCE
+$(RM)
+endef
+
+define RM_TWICE
+$(RM) $(RM_ONCE)
+endef
