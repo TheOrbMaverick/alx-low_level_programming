@@ -7,7 +7,7 @@ int jump_search(int *array, size_t size, int value)
 
 	if (array == NULL)
 		return (-1);
-	
+
 	/* Calculate the jump step */
 	step = sqrt(size);
 	prev = 0;
